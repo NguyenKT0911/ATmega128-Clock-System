@@ -1,0 +1,15 @@
+# AVR build files
+*.o
+*.elf
+*.hex
+*.map
+*.lst
+
+# Build directories
+build/
+Debug/
+Release/
+
+# Temporary files
+*.tmp
+*.log

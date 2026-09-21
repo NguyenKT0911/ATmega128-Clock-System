@@ -1,0 +1,58 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build ATmega128 ELF",
+            "type": "shell",
+            "command": "avr-gcc",
+            "args": [
+                "-mmcu=atmega128",
+                "-DF_CPU=8000000UL",
+                "-Os",
+                "main.c",
+                "lcd.c",
+                "button.c",
+                "buzzer.c",
+                "i2c.c",
+                "ds1307.c",
+                "onewire.c",
+                "ds18b20.c",
+                "timer.c",
+                
+                "-o", 
+                "main.elf" 
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Create ATmega128 HEX",
+            "type": "shell",
+            "command": "avr-objcopy",
+            "args": [
+                "-O",
+                "ihex",
+                "-R",
+                ".eeprom",
+                "main.elf",
+                "main.hex"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Build ATmega128 ELF",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build ATmega128",
+            "dependsOn": "Create ATmega128 HEX",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "AVR ATmega128",
+            "compilerPath": "D:/Work or Sleep/MegaAt128/avr8-gnu-toolchain-win32_x86_64/bin/avr-gcc.exe",
+
+            "compilerArgs": [
+                "-mmcu=atmega128"
+            ],
+
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:/Work or Sleep/MegaAt128/avr8-gnu-toolchain-win32_x86_64/avr/include",
+                "D:/Work or Sleep/MegaAt128/avr8-gnu-toolchain-win32_x86_64/lib/gcc/avr/15.1.0/include"
+            ],
+
+            "defines": [
+                "F_CPU=8000000UL",
+                "__AVR_ATmega128__"
+            ],
+
+            "cStandard": "c11"
+        }
+    ],
+    "version": 4
+}
